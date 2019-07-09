@@ -74,7 +74,7 @@
 //          var lastcolor = cp.history[]
 					rectpath.fillColor = {
             gradient: {
-              stops: ['yellow', 'blue']
+              stops: [cp.history[cp.history.length-2], cp.history[cp.history.length-1]]
             },
             origin: orig,
             destination: event.point

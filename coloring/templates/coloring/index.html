@@ -63,13 +63,22 @@
         var rect = new paper.Rectangle(260, 310, 200, 100);
         var rectpath = new paper.Path.Rectangle(rect);
         rectpath.fillColor = 'red';
+        var orig;
 
 				tool.onMouseDown = function (event) {
-          
+          var path = new paper.Path();
+          orig = event.point;
 				}
 
 				tool.onMouseUp = function (event) {
-					
+//          var lastcolor = cp.history[]
+					rectpath.fillColor = {
+            gradient: {
+              stops: ['yellow', 'blue']
+            },
+            origin: orig,
+            destination: event.point
+          };
 				}
 			}
 
@@ -84,10 +93,6 @@
 				        hit.item.fillColor = cp.history[cp.history.length - 1];
 				    }
 				}
-        
-        var rect = new paper.Rectangle(10, 20, 200, 100);
-        var path = new paper.Path.Rectangle(rect);
-        path.fillColor = 'red';
         
 			}
 

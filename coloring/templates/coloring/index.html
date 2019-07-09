@@ -59,9 +59,13 @@
 			// you may also add code outside of the function (e.g., global variables)
 			function myGradientInteraction(){
 				var tool = new paper.Tool();
+        
+        var rect = new paper.Rectangle(260, 310, 200, 100);
+        var rectpath = new paper.Path.Rectangle(rect);
+        rectpath.fillColor = 'red';
 
 				tool.onMouseDown = function (event) {
-
+          
 				}
 
 				tool.onMouseUp = function (event) {
@@ -73,13 +77,18 @@
 			// you may replace everything
 			function myCustomInteraction() {
 				var tool = new paper.Tool();
-
+        
 				tool.onMouseDown = function (event) {
 				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    if (hit) {
 				        hit.item.fillColor = cp.history[cp.history.length - 1];
 				    }
 				}
+        
+        var rect = new paper.Rectangle(10, 20, 200, 100);
+        var path = new paper.Path.Rectangle(rect);
+        path.fillColor = 'red';
+        
 			}
 
 
